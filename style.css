@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 128, 0, 0.5);
+    background-image: url(Cartas/fondo.png);
+    background-repeat: no-repeat;
+    background-size: 100% 105%; 
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 97vh;
+    color: white;
+}
+h2{
+    margin: 0;
+}
+.compu{
+    margin-bottom: 5rem;
+}
+.cartas-contenedor {
+    margin-top: 5px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    width: 150px;
+    height: 230px;
+    position: relative;
+}
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.card:not(:first-child) {
+    margin-left: -70px;
+}
+.button-container {
+    margin: 0;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+button:hover {
+    background-color: #0056b3;
+}
+@media (max-width: 900px) {
+    .cartas-contenedor {
+        margin-top: auto;
+    }
+    .card {
+        width: 120px;
+        height: 184px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .card:not(:first-child) {
+        margin-left: -50px;
+    }
+    .button-container {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .cartas-contenedor {
+        margin-top: auto;
+    }
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    button {
+        margin-bottom: 10px;
+    }
+    .card {
+        width: 100px;
+        height: 154px;
+    }
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .card:not(:first-child) {
+        margin-left: -45px;
+    }
+}
