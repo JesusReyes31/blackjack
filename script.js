@@ -67,7 +67,7 @@ const actualizarPuntaje = () => {
             document.getElementById("Jugador").innerText = `${puntajeJugador.max}`;
         }
         pjugador();
-        setTimeout(() => {alert("¡Jugador Ganó, tiene 21!");},500);
+        permanecer();
     }
 };
 const pjugador = ()=>{
@@ -81,6 +81,8 @@ const pjugador = ()=>{
 }
 const iniciarJuego = () => {
     crearBaraja();
+    document.getElementById("hit").removeEventListener("click",pedircarta);
+    document.getElementById("stay").removeEventListener("click",permanecer);
     jugador.cartas = [obtenerCartaAleatoria(), obtenerCartaAleatoria()];
     computadora.cartas = [obtenerCartaAleatoria(), obtenerCartaAleatoria()];
     mostrarCarta(jugador.cartas[0], "jugadorcartas");
@@ -133,6 +135,13 @@ const permanecer = ()=>{
     setTimeout(() => {
         const pj = parseInt(document.getElementById("Jugador").textContent);
         const pc = parseInt(document.getElementById("comp").textContent);
+        if(pj>21){
+            alert("¡Ganó la COMPUTADORA, con un puntaje de "+pc+"!");
+            return;
+        }else if(pc>21){
+            alert("¡Ganó el JUGADOR, con un puntaje de "+pj+"!");
+            return;
+        }
         if(pj>pc){
             alert("¡Ganó el JUGADOR, con un puntaje de "+pj+"!");
         }else if(pj<pc){
@@ -143,8 +152,6 @@ const permanecer = ()=>{
     },500);
 }
 window.onload = () => {
-    document.getElementById("hit").addEventListener("click", pedircarta);
-    document.getElementById("stay").addEventListener("click", permanecer);
     document.getElementById("nvojgo").addEventListener("click", () => {
         document.getElementById("compcartas").innerHTML = "";
         document.getElementById("jugadorcartas").innerHTML = "";
