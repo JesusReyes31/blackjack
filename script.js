@@ -81,8 +81,8 @@ const pjugador = ()=>{
 }
 const iniciarJuego = () => {
     crearBaraja();
-    document.getElementById("hit").removeEventListener("click",pedircarta);
-    document.getElementById("stay").removeEventListener("click",permanecer);
+    document.getElementById("hit").addEventListener("click",pedircarta);
+    document.getElementById("stay").addEventListener("click",permanecer);
     jugador.cartas = [obtenerCartaAleatoria(), obtenerCartaAleatoria()];
     computadora.cartas = [obtenerCartaAleatoria(), obtenerCartaAleatoria()];
     mostrarCarta(jugador.cartas[0], "jugadorcartas");
